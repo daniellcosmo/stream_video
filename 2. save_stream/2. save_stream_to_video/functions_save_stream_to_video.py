@@ -15,9 +15,6 @@ def captura_frames_azure(output_folder='videos', max_duration_seconds=15, fps=10
     video_server_ip='http://192.168.0.9:5000/video_feed'
     blob_service_client = BlobServiceClient.from_connection_string(connection_string)
 
-    # # Cria a pasta "videos" se ela não existir
-    # os.makedirs(output_folder, exist_ok=True)
-
     # Nome do arquivo de vídeo
     start_time = time.time()
     microseconds = int((start_time - int(start_time)) * 1e6)
@@ -85,6 +82,8 @@ def captura_frames_azure(output_folder='videos', max_duration_seconds=15, fps=10
             # with open(temp_video.name, "rb") as data:
             #     blob_client.upload_blob(data)
 
+            # # Cria a pasta "videos" se ela não existir
+            # os.makedirs(output_folder, exist_ok=True)
             # Caminho para o diretório local onde você deseja salvar o arquivo
             diretorio_local = "videos/"
             arquivo_local = os.path.join(diretorio_local, video_filename)
