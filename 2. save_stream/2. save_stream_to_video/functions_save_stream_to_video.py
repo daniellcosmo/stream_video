@@ -82,10 +82,11 @@ def captura_frames_azure(output_folder='videos', max_duration_seconds=15, fps=10
             # with open(temp_video.name, "rb") as data:
             #     blob_client.upload_blob(data)
 
+            diretorio_local = "videos"
             # # Cria a pasta "videos" se ela não existir
-            # os.makedirs(output_folder, exist_ok=True)
+            os.makedirs(diretorio_local, exist_ok=True)
             # Caminho para o diretório local onde você deseja salvar o arquivo
-            diretorio_local = "videos/"
+            
             arquivo_local = os.path.join(diretorio_local, video_filename)
 
             # Faz o salvamento local
